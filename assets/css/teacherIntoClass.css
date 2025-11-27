@@ -1,0 +1,36 @@
+
+.student-list {
+    margin: 5px;
+    margin-top: 5%;
+    width: 500px;
+    background-color: #2f9365;
+    padding: 15px;
+    border: 1px solid #000000; 
+}
+
+.student-row {
+    display: flex;
+    align-items: center;
+    margin-bottom: 12px;
+    padding: 10px;
+}
+:hover.student-row {
+    background-color: #45d08f; 
+    cursor: pointer;
+}
+
+.icon {
+    width: 35px;
+    height: 35px;
+    background: rgb(225, 223, 223); 
+    border-radius: 4px;
+    margin-right: 10px;
+}
+
+.name {
+    flex: 1;
+    background: rgb(225, 223, 223); 
+    padding: 10px;
+    border-radius: 4px;
+    font-size: 15px;
+}

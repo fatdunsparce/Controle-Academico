@@ -1,0 +1,32 @@
+.card{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgb(160, 158, 158); 
+    text-align: center;
+    background-color: white;
+    width: 250px;
+    height: 150px;
+    font-size: small;
+    cursor: pointer;
+}
+.line{
+    height: 1px;
+    width: 80%;
+    background-color: black;
+    margin: 9px 0;
+    transition: ease-in-out;
+
+}
+.card:hover{
+    scale: 1.05;
+    transition-duration: 10ms;
+    box-shadow: 0 4px 8px rgb(137, 204, 147); 
+    color: rgb(84, 128, 91);
+}
+.card-link {
+    text-decoration: none; 
+    color: inherit;       
+}

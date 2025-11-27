@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ProAtiva</title>
+    <link rel="stylesheet" href="./assets/css/geral.css">
+    <link rel="stylesheet" href="./assets/css/login.css">
+</head>
+<body>
+    <header>
+        <div style="width: 100%; display: flex; padding-left: 15px; padding-right: 15px; align-items: center;  ">
+            <a class="arrow" href="./home.html">
+                <img style="height: 20px;" src="./assets/icons/arrow.png" alt="home" style="width: 100%; height: auto; transform: scaleX(-1)">    
+            </a href="./teacher.html">
+            <div style="width: 100%; display: flex; justify-content: center; align-items: center; padding-right: 40px;">
+                <h1 style="text-align: center; ">BEM VINDO ALUNO(A)</h1>
+            </div>
+        </div>
+    </header>
+
+    <div style="display: flex; width: 100%; justify-content: center;
+    align-items: center; flex-direction: column;">
+
+        <form id="loginForm"  style="display: flex; width: 100%; flex-direction: column; gap: 7px; width: 30%; margin-top: 50px; background-color: white; border-radius: 5px; padding: 10px; " action="">
+            <label for="">Insira seu CGM:</label>
+            <input id="cgm" placeholder="ex: 12344555432323" class="field" type="text">
+            <label for="">Insira sua senha:</label>
+            <input id="password" type="password" placeholder="Senha" class="field" type="text">
+            <button id="submit" type="submit" class="btn2" >login</button>
+        </form>
+    </div>
+    
+</body>
+
+<script>
+document.getElementById("loginForm").addEventListener("submit", async (event) => {
+    event.preventDefault();
+
+    const cgm = document.getElementById("cgm").value;
+    const password = document.getElementById("password").value;
+
+    const response = await fetch("http://localhost:3000/login", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ cgm, password,typeAccount: "student" })
+    });
+
+    const data = await response.json();
+
+    if (!response.ok) {
+        alert(data.error || "Erro ao fazer login");
+        return;
+    }
+
+    alert("Login OK!");
+    window.location.href = "./studentHome.html";
+});
+</script>
+</html>
